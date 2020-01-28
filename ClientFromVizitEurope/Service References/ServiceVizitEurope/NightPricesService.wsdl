@@ -1,0 +1,1293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s1="http://tempuri.org/AbstractTypes" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetUpdatedStopSales">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="updatedAfter" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUpdatedStopSalesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUpdatedStopSalesResult" type="tns:ArrayOfStopsale" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfStopsale">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="stopsale" nillable="true" type="tns:stopsale" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="stopsale">
+        <s:attribute name="id" type="s:int" use="required" />
+        <s:attribute name="updated" type="s:dateTime" use="required" />
+        <s:attribute name="date" type="s:dateTime" use="required" />
+        <s:attribute name="ht" type="s:int" use="required" />
+        <s:attribute name="rt" type="s:int" use="required" />
+        <s:attribute name="rm" type="s:int" use="required" />
+      </s:complexType>
+      <s:element name="GetUpdatedQuotes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="updatedAfter" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUpdatedQuotesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUpdatedQuotesResult" type="tns:ArrayOfQuote" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfQuote">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="quote" nillable="true" type="tns:quote" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="quote">
+        <s:attribute name="id" type="s:int" use="required" />
+        <s:attribute name="updated" type="s:dateTime" use="required" />
+        <s:attribute name="date" type="s:dateTime" use="required" />
+        <s:attribute name="ht" type="s:int" use="required" />
+        <s:attribute name="rt" type="s:int" use="required" />
+        <s:attribute name="busy" type="s:int" use="required" />
+        <s:attribute name="places" type="s:int" use="required" />
+        <s:attribute name="release" type="s:int" use="required" />
+        <s:attribute name="rm" type="s:int" use="required" />
+        <s:attribute name="by_room" type="s:boolean" use="required" />
+      </s:complexType>
+      <s:element name="GetDeletedQuotes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="updatedAfter" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDeletedQuotesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDeletedQuotesResult" type="tns:ArrayOfQuote" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDeletedStops">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="updatedAfter" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDeletedStopsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDeletedStopsResult" type="tns:ArrayOfStopsale" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DictionaryPansions">
+        <s:complexType />
+      </s:element>
+      <s:element name="DictionaryPansionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DictionaryPansionsResult" type="tns:ArrayOfPansion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPansion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="pansion" nillable="true" type="tns:pansion" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="pansion">
+        <s:attribute name="id" type="s:int" use="required" />
+        <s:attribute name="code" type="s:string" />
+        <s:attribute name="title" type="s:string" />
+      </s:complexType>
+      <s:element name="DictionaryRoomTypes">
+        <s:complexType />
+      </s:element>
+      <s:element name="DictionaryRoomTypesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DictionaryRoomTypesResult" type="tns:ArrayOfRoomtype" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfRoomtype">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="roomtype" nillable="true" type="tns:roomtype" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="roomtype">
+        <s:attribute name="id" type="s:int" use="required" />
+        <s:attribute name="code" type="s:string" />
+        <s:attribute name="title" type="s:string" />
+        <s:attribute name="updated" type="s:dateTime" use="required" />
+      </s:complexType>
+      <s:element name="DictionaryRoomCategories">
+        <s:complexType />
+      </s:element>
+      <s:element name="DictionaryRoomCategoriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DictionaryRoomCategoriesResult" type="tns:ArrayOfCategory" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCategory">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="category" nillable="true" type="tns:category" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="category">
+        <s:attribute name="id" type="s:int" use="required" />
+        <s:attribute name="code" type="s:string" />
+        <s:attribute name="title" type="s:string" />
+        <s:attribute name="updated" type="s:dateTime" use="required" />
+      </s:complexType>
+      <s:element name="DictionaryAccommodations">
+        <s:complexType />
+      </s:element>
+      <s:element name="DictionaryAccommodationsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DictionaryAccommodationsResult" type="tns:ArrayOfAccmmodation" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAccmmodation">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="accmmodation" nillable="true" type="tns:accmmodation" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="accmmodation">
+        <s:attribute name="id" type="s:int" use="required" />
+        <s:attribute name="code" type="s:string" />
+        <s:attribute name="title" type="s:string" />
+        <s:attribute name="updated" type="s:dateTime" use="required" />
+      </s:complexType>
+      <s:element name="DictionaryCountries">
+        <s:complexType />
+      </s:element>
+      <s:element name="DictionaryCountriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DictionaryCountriesResult" type="tns:ArrayOfCountry" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCountry">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="country" nillable="true" type="tns:country" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="country">
+        <s:attribute name="id" type="s:int" use="required" />
+        <s:attribute name="code" type="s:string" />
+        <s:attribute name="title" type="s:string" />
+        <s:attribute name="updated" type="s:dateTime" use="required" />
+      </s:complexType>
+      <s:element name="DictionaryCities">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="countryId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DictionaryCitiesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DictionaryCitiesResult" type="tns:ArrayOfCity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="city" nillable="true" type="tns:city" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="city">
+        <s:attribute name="id" type="s:int" use="required" />
+        <s:attribute name="code" type="s:string" />
+        <s:attribute name="title" type="s:string" />
+        <s:attribute name="updated" type="s:dateTime" use="required" />
+      </s:complexType>
+      <s:element name="DictionaryHotels">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cityId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DictionaryHotelsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DictionaryHotelsResult" type="tns:ArrayOfHotel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfHotel">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="hotel" nillable="true" type="tns:hotel" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="hotel">
+        <s:attribute name="id" type="s:int" use="required" />
+        <s:attribute name="code" type="s:string" />
+        <s:attribute name="stars" type="s:string" />
+        <s:attribute name="title" type="s:string" />
+        <s:attribute name="updated" type="s:dateTime" use="required" />
+      </s:complexType>
+      <s:element name="GetPrices">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cityId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="hotelIds" type="tns:ArrayOfInt" />
+            <s:element minOccurs="1" maxOccurs="1" name="updatedAfter" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPricesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPricesResult" type="tns:ArrayOfCost" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCost">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="cost" nillable="true" type="tns:cost" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="cost">
+        <s:attribute name="id" type="s:int" use="required" />
+        <s:attribute name="week" type="s:string" />
+        <s:attribute name="longmin" type="s:int" use="required" />
+        <s:attribute name="longmax" type="s:int" use="required" />
+        <s:attribute name="updated" type="s:dateTime" use="required" />
+        <s:attribute name="date" type="s:dateTime" use="required" />
+        <s:attribute name="dateend" type="s:dateTime" use="required" />
+        <s:attribute name="checkin_min" type="s:dateTime" use="required" />
+        <s:attribute name="checkin_max" type="s:dateTime" use="required" />
+        <s:attribute name="ht" type="s:int" use="required" />
+        <s:attribute name="pn" type="s:int" use="required" />
+        <s:attribute name="rt" type="s:int" use="required" />
+        <s:attribute name="acc" type="s:int" use="required" />
+        <s:attribute name="rm" type="s:int" use="required" />
+        <s:attribute name="netto" type="s:decimal" use="required" />
+        <s:attribute name="rate" type="s:string" />
+        <s:attribute name="by_room" type="s:boolean" use="required" />
+      </s:complexType>
+      <s:element name="GetDeletedPriceIds">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cityId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="hotelIds" type="tns:ArrayOfInt" />
+            <s:element minOccurs="1" maxOccurs="1" name="updatedAfter" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDeletedPriceIdsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDeletedPriceIdsResult" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActualPriceIds">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cityId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="hotelIds" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActualPriceIdsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetActualPriceIdsResult" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ArrayOfStopsale" nillable="true" type="tns:ArrayOfStopsale" />
+      <s:element name="ArrayOfQuote" nillable="true" type="tns:ArrayOfQuote" />
+      <s:element name="ArrayOfPansion" nillable="true" type="tns:ArrayOfPansion" />
+      <s:element name="ArrayOfRoomtype" nillable="true" type="tns:ArrayOfRoomtype" />
+      <s:element name="ArrayOfCategory" nillable="true" type="tns:ArrayOfCategory" />
+      <s:element name="ArrayOfAccmmodation" nillable="true" type="tns:ArrayOfAccmmodation" />
+      <s:element name="ArrayOfCountry" nillable="true" type="tns:ArrayOfCountry" />
+      <s:element name="ArrayOfCity" nillable="true" type="tns:ArrayOfCity" />
+      <s:element name="ArrayOfHotel" nillable="true" type="tns:ArrayOfHotel" />
+      <s:element name="ArrayOfCost" nillable="true" type="tns:ArrayOfCost" />
+      <s:element name="ArrayOfInt" nillable="true" type="tns:ArrayOfInt" />
+    </s:schema>
+    <s:schema targetNamespace="http://tempuri.org/AbstractTypes">
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="StringArray">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="String" type="s:string" />
+            </s:sequence>
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetUpdatedStopSalesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUpdatedStopSales" />
+  </wsdl:message>
+  <wsdl:message name="GetUpdatedStopSalesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUpdatedStopSalesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUpdatedQuotesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUpdatedQuotes" />
+  </wsdl:message>
+  <wsdl:message name="GetUpdatedQuotesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUpdatedQuotesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDeletedQuotesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDeletedQuotes" />
+  </wsdl:message>
+  <wsdl:message name="GetDeletedQuotesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDeletedQuotesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDeletedStopsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDeletedStops" />
+  </wsdl:message>
+  <wsdl:message name="GetDeletedStopsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDeletedStopsResponse" />
+  </wsdl:message>
+  <wsdl:message name="DictionaryPansionsSoapIn">
+    <wsdl:part name="parameters" element="tns:DictionaryPansions" />
+  </wsdl:message>
+  <wsdl:message name="DictionaryPansionsSoapOut">
+    <wsdl:part name="parameters" element="tns:DictionaryPansionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="DictionaryRoomTypesSoapIn">
+    <wsdl:part name="parameters" element="tns:DictionaryRoomTypes" />
+  </wsdl:message>
+  <wsdl:message name="DictionaryRoomTypesSoapOut">
+    <wsdl:part name="parameters" element="tns:DictionaryRoomTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="DictionaryRoomCategoriesSoapIn">
+    <wsdl:part name="parameters" element="tns:DictionaryRoomCategories" />
+  </wsdl:message>
+  <wsdl:message name="DictionaryRoomCategoriesSoapOut">
+    <wsdl:part name="parameters" element="tns:DictionaryRoomCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="DictionaryAccommodationsSoapIn">
+    <wsdl:part name="parameters" element="tns:DictionaryAccommodations" />
+  </wsdl:message>
+  <wsdl:message name="DictionaryAccommodationsSoapOut">
+    <wsdl:part name="parameters" element="tns:DictionaryAccommodationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="DictionaryCountriesSoapIn">
+    <wsdl:part name="parameters" element="tns:DictionaryCountries" />
+  </wsdl:message>
+  <wsdl:message name="DictionaryCountriesSoapOut">
+    <wsdl:part name="parameters" element="tns:DictionaryCountriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="DictionaryCitiesSoapIn">
+    <wsdl:part name="parameters" element="tns:DictionaryCities" />
+  </wsdl:message>
+  <wsdl:message name="DictionaryCitiesSoapOut">
+    <wsdl:part name="parameters" element="tns:DictionaryCitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="DictionaryHotelsSoapIn">
+    <wsdl:part name="parameters" element="tns:DictionaryHotels" />
+  </wsdl:message>
+  <wsdl:message name="DictionaryHotelsSoapOut">
+    <wsdl:part name="parameters" element="tns:DictionaryHotelsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPricesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPrices" />
+  </wsdl:message>
+  <wsdl:message name="GetPricesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPricesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDeletedPriceIdsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDeletedPriceIds" />
+  </wsdl:message>
+  <wsdl:message name="GetDeletedPriceIdsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDeletedPriceIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetActualPriceIdsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetActualPriceIds" />
+  </wsdl:message>
+  <wsdl:message name="GetActualPriceIdsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetActualPriceIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUpdatedStopSalesHttpGetIn">
+    <wsdl:part name="updatedAfter" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUpdatedStopSalesHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfStopsale" />
+  </wsdl:message>
+  <wsdl:message name="GetUpdatedQuotesHttpGetIn">
+    <wsdl:part name="updatedAfter" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUpdatedQuotesHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfQuote" />
+  </wsdl:message>
+  <wsdl:message name="GetDeletedQuotesHttpGetIn">
+    <wsdl:part name="updatedAfter" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDeletedQuotesHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfQuote" />
+  </wsdl:message>
+  <wsdl:message name="GetDeletedStopsHttpGetIn">
+    <wsdl:part name="updatedAfter" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDeletedStopsHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfStopsale" />
+  </wsdl:message>
+  <wsdl:message name="DictionaryPansionsHttpGetIn" />
+  <wsdl:message name="DictionaryPansionsHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPansion" />
+  </wsdl:message>
+  <wsdl:message name="DictionaryRoomTypesHttpGetIn" />
+  <wsdl:message name="DictionaryRoomTypesHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfRoomtype" />
+  </wsdl:message>
+  <wsdl:message name="DictionaryRoomCategoriesHttpGetIn" />
+  <wsdl:message name="DictionaryRoomCategoriesHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCategory" />
+  </wsdl:message>
+  <wsdl:message name="DictionaryAccommodationsHttpGetIn" />
+  <wsdl:message name="DictionaryAccommodationsHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAccmmodation" />
+  </wsdl:message>
+  <wsdl:message name="DictionaryCountriesHttpGetIn" />
+  <wsdl:message name="DictionaryCountriesHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCountry" />
+  </wsdl:message>
+  <wsdl:message name="DictionaryCitiesHttpGetIn">
+    <wsdl:part name="countryId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DictionaryCitiesHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCity" />
+  </wsdl:message>
+  <wsdl:message name="DictionaryHotelsHttpGetIn">
+    <wsdl:part name="cityId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DictionaryHotelsHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfHotel" />
+  </wsdl:message>
+  <wsdl:message name="GetPricesHttpGetIn">
+    <wsdl:part name="cityId" type="s:string" />
+    <wsdl:part name="hotelIds" type="s1:StringArray" />
+    <wsdl:part name="updatedAfter" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPricesHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCost" />
+  </wsdl:message>
+  <wsdl:message name="GetDeletedPriceIdsHttpGetIn">
+    <wsdl:part name="cityId" type="s:string" />
+    <wsdl:part name="hotelIds" type="s1:StringArray" />
+    <wsdl:part name="updatedAfter" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDeletedPriceIdsHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfInt" />
+  </wsdl:message>
+  <wsdl:message name="GetActualPriceIdsHttpGetIn">
+    <wsdl:part name="cityId" type="s:string" />
+    <wsdl:part name="hotelIds" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="GetActualPriceIdsHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfInt" />
+  </wsdl:message>
+  <wsdl:message name="GetUpdatedStopSalesHttpPostIn">
+    <wsdl:part name="updatedAfter" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUpdatedStopSalesHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfStopsale" />
+  </wsdl:message>
+  <wsdl:message name="GetUpdatedQuotesHttpPostIn">
+    <wsdl:part name="updatedAfter" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUpdatedQuotesHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfQuote" />
+  </wsdl:message>
+  <wsdl:message name="GetDeletedQuotesHttpPostIn">
+    <wsdl:part name="updatedAfter" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDeletedQuotesHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfQuote" />
+  </wsdl:message>
+  <wsdl:message name="GetDeletedStopsHttpPostIn">
+    <wsdl:part name="updatedAfter" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDeletedStopsHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfStopsale" />
+  </wsdl:message>
+  <wsdl:message name="DictionaryPansionsHttpPostIn" />
+  <wsdl:message name="DictionaryPansionsHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPansion" />
+  </wsdl:message>
+  <wsdl:message name="DictionaryRoomTypesHttpPostIn" />
+  <wsdl:message name="DictionaryRoomTypesHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfRoomtype" />
+  </wsdl:message>
+  <wsdl:message name="DictionaryRoomCategoriesHttpPostIn" />
+  <wsdl:message name="DictionaryRoomCategoriesHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCategory" />
+  </wsdl:message>
+  <wsdl:message name="DictionaryAccommodationsHttpPostIn" />
+  <wsdl:message name="DictionaryAccommodationsHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAccmmodation" />
+  </wsdl:message>
+  <wsdl:message name="DictionaryCountriesHttpPostIn" />
+  <wsdl:message name="DictionaryCountriesHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCountry" />
+  </wsdl:message>
+  <wsdl:message name="DictionaryCitiesHttpPostIn">
+    <wsdl:part name="countryId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DictionaryCitiesHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCity" />
+  </wsdl:message>
+  <wsdl:message name="DictionaryHotelsHttpPostIn">
+    <wsdl:part name="cityId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DictionaryHotelsHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfHotel" />
+  </wsdl:message>
+  <wsdl:message name="GetPricesHttpPostIn">
+    <wsdl:part name="cityId" type="s:string" />
+    <wsdl:part name="hotelIds" type="s1:StringArray" />
+    <wsdl:part name="updatedAfter" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPricesHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCost" />
+  </wsdl:message>
+  <wsdl:message name="GetDeletedPriceIdsHttpPostIn">
+    <wsdl:part name="cityId" type="s:string" />
+    <wsdl:part name="hotelIds" type="s1:StringArray" />
+    <wsdl:part name="updatedAfter" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDeletedPriceIdsHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfInt" />
+  </wsdl:message>
+  <wsdl:message name="GetActualPriceIdsHttpPostIn">
+    <wsdl:part name="cityId" type="s:string" />
+    <wsdl:part name="hotelIds" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="GetActualPriceIdsHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfInt" />
+  </wsdl:message>
+  <wsdl:portType name="NightPricesServiceSoap">
+    <wsdl:operation name="GetUpdatedStopSales">
+      <wsdl:input message="tns:GetUpdatedStopSalesSoapIn" />
+      <wsdl:output message="tns:GetUpdatedStopSalesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUpdatedQuotes">
+      <wsdl:input message="tns:GetUpdatedQuotesSoapIn" />
+      <wsdl:output message="tns:GetUpdatedQuotesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeletedQuotes">
+      <wsdl:input message="tns:GetDeletedQuotesSoapIn" />
+      <wsdl:output message="tns:GetDeletedQuotesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeletedStops">
+      <wsdl:input message="tns:GetDeletedStopsSoapIn" />
+      <wsdl:output message="tns:GetDeletedStopsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryPansions">
+      <wsdl:input message="tns:DictionaryPansionsSoapIn" />
+      <wsdl:output message="tns:DictionaryPansionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryRoomTypes">
+      <wsdl:input message="tns:DictionaryRoomTypesSoapIn" />
+      <wsdl:output message="tns:DictionaryRoomTypesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryRoomCategories">
+      <wsdl:input message="tns:DictionaryRoomCategoriesSoapIn" />
+      <wsdl:output message="tns:DictionaryRoomCategoriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryAccommodations">
+      <wsdl:input message="tns:DictionaryAccommodationsSoapIn" />
+      <wsdl:output message="tns:DictionaryAccommodationsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryCountries">
+      <wsdl:input message="tns:DictionaryCountriesSoapIn" />
+      <wsdl:output message="tns:DictionaryCountriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryCities">
+      <wsdl:input message="tns:DictionaryCitiesSoapIn" />
+      <wsdl:output message="tns:DictionaryCitiesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryHotels">
+      <wsdl:input message="tns:DictionaryHotelsSoapIn" />
+      <wsdl:output message="tns:DictionaryHotelsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPrices">
+      <wsdl:input message="tns:GetPricesSoapIn" />
+      <wsdl:output message="tns:GetPricesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeletedPriceIds">
+      <wsdl:input message="tns:GetDeletedPriceIdsSoapIn" />
+      <wsdl:output message="tns:GetDeletedPriceIdsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActualPriceIds">
+      <wsdl:input message="tns:GetActualPriceIdsSoapIn" />
+      <wsdl:output message="tns:GetActualPriceIdsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="NightPricesServiceHttpGet">
+    <wsdl:operation name="GetUpdatedStopSales">
+      <wsdl:input message="tns:GetUpdatedStopSalesHttpGetIn" />
+      <wsdl:output message="tns:GetUpdatedStopSalesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUpdatedQuotes">
+      <wsdl:input message="tns:GetUpdatedQuotesHttpGetIn" />
+      <wsdl:output message="tns:GetUpdatedQuotesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeletedQuotes">
+      <wsdl:input message="tns:GetDeletedQuotesHttpGetIn" />
+      <wsdl:output message="tns:GetDeletedQuotesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeletedStops">
+      <wsdl:input message="tns:GetDeletedStopsHttpGetIn" />
+      <wsdl:output message="tns:GetDeletedStopsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryPansions">
+      <wsdl:input message="tns:DictionaryPansionsHttpGetIn" />
+      <wsdl:output message="tns:DictionaryPansionsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryRoomTypes">
+      <wsdl:input message="tns:DictionaryRoomTypesHttpGetIn" />
+      <wsdl:output message="tns:DictionaryRoomTypesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryRoomCategories">
+      <wsdl:input message="tns:DictionaryRoomCategoriesHttpGetIn" />
+      <wsdl:output message="tns:DictionaryRoomCategoriesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryAccommodations">
+      <wsdl:input message="tns:DictionaryAccommodationsHttpGetIn" />
+      <wsdl:output message="tns:DictionaryAccommodationsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryCountries">
+      <wsdl:input message="tns:DictionaryCountriesHttpGetIn" />
+      <wsdl:output message="tns:DictionaryCountriesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryCities">
+      <wsdl:input message="tns:DictionaryCitiesHttpGetIn" />
+      <wsdl:output message="tns:DictionaryCitiesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryHotels">
+      <wsdl:input message="tns:DictionaryHotelsHttpGetIn" />
+      <wsdl:output message="tns:DictionaryHotelsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPrices">
+      <wsdl:input message="tns:GetPricesHttpGetIn" />
+      <wsdl:output message="tns:GetPricesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeletedPriceIds">
+      <wsdl:input message="tns:GetDeletedPriceIdsHttpGetIn" />
+      <wsdl:output message="tns:GetDeletedPriceIdsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActualPriceIds">
+      <wsdl:input message="tns:GetActualPriceIdsHttpGetIn" />
+      <wsdl:output message="tns:GetActualPriceIdsHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="NightPricesServiceHttpPost">
+    <wsdl:operation name="GetUpdatedStopSales">
+      <wsdl:input message="tns:GetUpdatedStopSalesHttpPostIn" />
+      <wsdl:output message="tns:GetUpdatedStopSalesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUpdatedQuotes">
+      <wsdl:input message="tns:GetUpdatedQuotesHttpPostIn" />
+      <wsdl:output message="tns:GetUpdatedQuotesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeletedQuotes">
+      <wsdl:input message="tns:GetDeletedQuotesHttpPostIn" />
+      <wsdl:output message="tns:GetDeletedQuotesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeletedStops">
+      <wsdl:input message="tns:GetDeletedStopsHttpPostIn" />
+      <wsdl:output message="tns:GetDeletedStopsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryPansions">
+      <wsdl:input message="tns:DictionaryPansionsHttpPostIn" />
+      <wsdl:output message="tns:DictionaryPansionsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryRoomTypes">
+      <wsdl:input message="tns:DictionaryRoomTypesHttpPostIn" />
+      <wsdl:output message="tns:DictionaryRoomTypesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryRoomCategories">
+      <wsdl:input message="tns:DictionaryRoomCategoriesHttpPostIn" />
+      <wsdl:output message="tns:DictionaryRoomCategoriesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryAccommodations">
+      <wsdl:input message="tns:DictionaryAccommodationsHttpPostIn" />
+      <wsdl:output message="tns:DictionaryAccommodationsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryCountries">
+      <wsdl:input message="tns:DictionaryCountriesHttpPostIn" />
+      <wsdl:output message="tns:DictionaryCountriesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryCities">
+      <wsdl:input message="tns:DictionaryCitiesHttpPostIn" />
+      <wsdl:output message="tns:DictionaryCitiesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryHotels">
+      <wsdl:input message="tns:DictionaryHotelsHttpPostIn" />
+      <wsdl:output message="tns:DictionaryHotelsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPrices">
+      <wsdl:input message="tns:GetPricesHttpPostIn" />
+      <wsdl:output message="tns:GetPricesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeletedPriceIds">
+      <wsdl:input message="tns:GetDeletedPriceIdsHttpPostIn" />
+      <wsdl:output message="tns:GetDeletedPriceIdsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActualPriceIds">
+      <wsdl:input message="tns:GetActualPriceIdsHttpPostIn" />
+      <wsdl:output message="tns:GetActualPriceIdsHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NightPricesServiceSoap" type="tns:NightPricesServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetUpdatedStopSales">
+      <soap:operation soapAction="http://tempuri.org/GetUpdatedStopSales" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUpdatedQuotes">
+      <soap:operation soapAction="http://tempuri.org/GetUpdatedQuotes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeletedQuotes">
+      <soap:operation soapAction="http://tempuri.org/GetDeletedQuotes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeletedStops">
+      <soap:operation soapAction="http://tempuri.org/GetDeletedStops" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryPansions">
+      <soap:operation soapAction="http://tempuri.org/DictionaryPansions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryRoomTypes">
+      <soap:operation soapAction="http://tempuri.org/DictionaryRoomTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryRoomCategories">
+      <soap:operation soapAction="http://tempuri.org/DictionaryRoomCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryAccommodations">
+      <soap:operation soapAction="http://tempuri.org/DictionaryAccommodations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryCountries">
+      <soap:operation soapAction="http://tempuri.org/DictionaryCountries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryCities">
+      <soap:operation soapAction="http://tempuri.org/DictionaryCities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryHotels">
+      <soap:operation soapAction="http://tempuri.org/DictionaryHotels" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrices">
+      <soap:operation soapAction="http://tempuri.org/GetPrices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeletedPriceIds">
+      <soap:operation soapAction="http://tempuri.org/GetDeletedPriceIds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActualPriceIds">
+      <soap:operation soapAction="http://tempuri.org/GetActualPriceIds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NightPricesServiceSoap12" type="tns:NightPricesServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetUpdatedStopSales">
+      <soap12:operation soapAction="http://tempuri.org/GetUpdatedStopSales" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUpdatedQuotes">
+      <soap12:operation soapAction="http://tempuri.org/GetUpdatedQuotes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeletedQuotes">
+      <soap12:operation soapAction="http://tempuri.org/GetDeletedQuotes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeletedStops">
+      <soap12:operation soapAction="http://tempuri.org/GetDeletedStops" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryPansions">
+      <soap12:operation soapAction="http://tempuri.org/DictionaryPansions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryRoomTypes">
+      <soap12:operation soapAction="http://tempuri.org/DictionaryRoomTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryRoomCategories">
+      <soap12:operation soapAction="http://tempuri.org/DictionaryRoomCategories" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryAccommodations">
+      <soap12:operation soapAction="http://tempuri.org/DictionaryAccommodations" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryCountries">
+      <soap12:operation soapAction="http://tempuri.org/DictionaryCountries" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryCities">
+      <soap12:operation soapAction="http://tempuri.org/DictionaryCities" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryHotels">
+      <soap12:operation soapAction="http://tempuri.org/DictionaryHotels" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrices">
+      <soap12:operation soapAction="http://tempuri.org/GetPrices" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeletedPriceIds">
+      <soap12:operation soapAction="http://tempuri.org/GetDeletedPriceIds" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActualPriceIds">
+      <soap12:operation soapAction="http://tempuri.org/GetActualPriceIds" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NightPricesServiceHttpGet" type="tns:NightPricesServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetUpdatedStopSales">
+      <http:operation location="/GetUpdatedStopSales" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUpdatedQuotes">
+      <http:operation location="/GetUpdatedQuotes" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeletedQuotes">
+      <http:operation location="/GetDeletedQuotes" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeletedStops">
+      <http:operation location="/GetDeletedStops" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryPansions">
+      <http:operation location="/DictionaryPansions" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryRoomTypes">
+      <http:operation location="/DictionaryRoomTypes" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryRoomCategories">
+      <http:operation location="/DictionaryRoomCategories" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryAccommodations">
+      <http:operation location="/DictionaryAccommodations" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryCountries">
+      <http:operation location="/DictionaryCountries" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryCities">
+      <http:operation location="/DictionaryCities" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryHotels">
+      <http:operation location="/DictionaryHotels" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrices">
+      <http:operation location="/GetPrices" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeletedPriceIds">
+      <http:operation location="/GetDeletedPriceIds" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActualPriceIds">
+      <http:operation location="/GetActualPriceIds" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NightPricesServiceHttpPost" type="tns:NightPricesServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetUpdatedStopSales">
+      <http:operation location="/GetUpdatedStopSales" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUpdatedQuotes">
+      <http:operation location="/GetUpdatedQuotes" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeletedQuotes">
+      <http:operation location="/GetDeletedQuotes" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeletedStops">
+      <http:operation location="/GetDeletedStops" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryPansions">
+      <http:operation location="/DictionaryPansions" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryRoomTypes">
+      <http:operation location="/DictionaryRoomTypes" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryRoomCategories">
+      <http:operation location="/DictionaryRoomCategories" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryAccommodations">
+      <http:operation location="/DictionaryAccommodations" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryCountries">
+      <http:operation location="/DictionaryCountries" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryCities">
+      <http:operation location="/DictionaryCities" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DictionaryHotels">
+      <http:operation location="/DictionaryHotels" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrices">
+      <http:operation location="/GetPrices" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeletedPriceIds">
+      <http:operation location="/GetDeletedPriceIds" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActualPriceIds">
+      <http:operation location="/GetActualPriceIds" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NightPricesService">
+    <wsdl:port name="NightPricesServiceSoap" binding="tns:NightPricesServiceSoap">
+      <soap:address location="https://service.viziteurope.ru/toprates/NightPricesService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="NightPricesServiceSoap12" binding="tns:NightPricesServiceSoap12">
+      <soap12:address location="https://service.viziteurope.ru/toprates/NightPricesService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="NightPricesServiceHttpGet" binding="tns:NightPricesServiceHttpGet">
+      <http:address location="https://service.viziteurope.ru/toprates/NightPricesService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="NightPricesServiceHttpPost" binding="tns:NightPricesServiceHttpPost">
+      <http:address location="https://service.viziteurope.ru/toprates/NightPricesService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

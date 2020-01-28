@@ -1,0 +1,6 @@
+D:\Проекты\ClientFromVizitEurope\ClientFromVizitEurope\bin\Debug\ClientFromVizitEurope.exe.config
+D:\Проекты\ClientFromVizitEurope\ClientFromVizitEurope\bin\Debug\ClientFromVizitEurope.exe
+D:\Проекты\ClientFromVizitEurope\ClientFromVizitEurope\bin\Debug\ClientFromVizitEurope.pdb
+D:\Проекты\ClientFromVizitEurope\ClientFromVizitEurope\obj\Debug\ClientFromVizitEurope.csprojResolveAssemblyReference.cache
+D:\Проекты\ClientFromVizitEurope\ClientFromVizitEurope\obj\Debug\ClientFromVizitEurope.exe
+D:\Проекты\ClientFromVizitEurope\ClientFromVizitEurope\obj\Debug\ClientFromVizitEurope.pdb
